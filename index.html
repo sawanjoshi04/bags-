@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURELIA | Luxury Handbags</title>
+    <meta name="description"
+        content="Discover Aurelia's exclusive collection of luxury women's handbags. Crafted with precision, elegance, and modern design.">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <!-- SVG Liquid Filter for Extreme Distortions -->
+    <svg style="visibility: hidden; position: absolute; width: 0; height: 0;" xmlns="http://www.w3.org/2000/svg"
+        version="1.1">
+        <defs>
+            <filter id="liquidGoo">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="15" result="blur" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 25 -10"
+                    result="liquidGoo" />
+                <feComposite in="SourceGraphic" in2="liquidGoo" operator="atop" />
+            </filter>
+            <filter id="extremeGlitch">
+                <feTurbulence type="fractalNoise" baseFrequency="0.05 0.95" numOctaves="1" result="warp" />
+                <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="30" in="SourceGraphic" in2="warp" />
+            </filter>
+        </defs>
+    </svg>
+
+    <!-- Extreme Floating Background Blobs -->
+    <div class="blob-container">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <a href="index.html" class="nav-brand">AURELIA<span>.</span></a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html" class="nav-link active">Home</a></li>
+            <li><a href="shop.html" class="nav-link">Collections</a></li>
+            <li><a href="heritage.html" class="nav-link">Heritage</a></li>
+            <li><a href="boutiques.html" class="nav-link">Boutiques</a></li>
+            <li><a href="feedback.html" class="nav-link">Feedback</a></li>
+        </ul>
+        <div class="menu-btn" id="menuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=2676&auto=format&fit=crop"
+                alt="Luxury Handbag Background">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <span class="hero-subtitle glitch-text" data-text="The New Horizon">The New Horizon</span>
+            <h1 class="display-1 extreme-text-glow">Elegance<br><span class="text-italic text-gold">Redefined.</span>
+            </h1>
+            <p class="hero-description">Experience the pinnacle of craftsmanship. Our modern silhouettes blend timeless
+                luxury with contemporary desire.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center;">
+                <a href="shop.html" class="btn btn-solid">Shop The Collection</a>
+                <a href="#" class="btn">Discover Artistry</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Featured Collections -->
+    <section class="featured-collections section-padding reveal">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="heading-2">Iconic Masterpieces</h2>
+                <p style="color: #888; max-width: 500px; margin: 0 auto;">Discover our most coveted silhouettes, each
+                    piece telling a story of uncompromised luxury.</p>
+            </div>
+
+            <div class="collection-grid">
+                <!-- Card 1 -->
+                <div class="collection-card">
+                    <img src="https://images.unsplash.com/photo-1584916201218-f4242ceb4809?q=80&w=2030&auto=format&fit=crop"
+                        alt="Nocturne Tote" class="collection-img">
+                    <div class="collection-content">
+                        <h3 class="collection-title">The Nocturne Tote</h3>
+                        <a href="shop.html" class="collection-link">Explore <i data-lucide="arrow-right"
+                                style="width: 16px; height: 16px;"></i></a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="collection-card">
+                    <img src="https://images.unsplash.com/photo-1591561954557-26941169b49e?q=80&w=1974&auto=format&fit=crop"
+                        alt="Aura Clutch" class="collection-img">
+                    <div class="collection-content">
+                        <h3 class="collection-title text-gold">Aura Evening Clutch</h3>
+                        <a href="shop.html" class="collection-link">Explore <i data-lucide="arrow-right"
+                                style="width: 16px; height: 16px;"></i></a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="collection-card">
+                    <img src="https://images.unsplash.com/photo-1594223402434-601e35d2dbe5?q=80&w=1973&auto=format&fit=crop"
+                        alt="Celeste Crossbody" class="collection-img">
+                    <div class="collection-content">
+                        <h3 class="collection-title">Celeste Crossbody</h3>
+                        <a href="shop.html" class="collection-link">Explore <i data-lucide="arrow-right"
+                                style="width: 16px; height: 16px;"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner Section -->
+    <section class="banner reveal">
+        <img src="https://images.unsplash.com/photo-1600857062241-98e5dba7f214?q=80&w=2541&auto=format&fit=crop"
+            alt="Brand Craftsmanship" class="banner-img">
+        <div class="container">
+            <div class="banner-content">
+                <h2 class="heading-2">Crafted for the<br>Modern <span class="text-gold text-italic">Muse</span></h2>
+                <p style="color: #aaa; margin-bottom: 2rem; line-height: 1.8;">Every stitch, every fold, every clasp is
+                    an ode to perfection. Handcrafted in Italy, AURELIA embodies the architectural beauty of modern
+                    design while honoring ancestral leather-working techniques.</p>
+                <a href="#" class="btn">Our Heritage</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h2 class="nav-brand footer-brand">AURELIA<span>.</span></h2>
+                    <p class="footer-desc">Setting the global standard for modern luxury and uncompromising
+                        craftsmanship since 2024.</p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Collections</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">New Arrivals</a></li>
+                        <li><a href="#">Tote Bags</a></li>
+                        <li><a href="#">Crossbody</a></li>
+                        <li><a href="#">Evening Bags</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Client Care</a></li>
+                        <li><a href="#">Book an Appointment</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Repairs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">House</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AURELIA. All Rights Reserved.</p>
+                <div style="display: flex; gap: 1rem;">
+                    <i data-lucide="instagram"></i>
+                    <i data-lucide="twitter"></i>
+                    <i data-lucide="facebook"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

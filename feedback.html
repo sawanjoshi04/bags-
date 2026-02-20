@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback | AURELIA Luxury</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .feedback-section {
+            padding: 150px 0 100px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .feedback-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(20px);
+            padding: 4rem;
+            border-radius: 10px;
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+            transform-style: preserve-3d;
+            animation: floatContinuous 8s ease-in-out infinite alternate;
+        }
+
+        .feedback-form {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            position: relative;
+        }
+
+        .form-label {
+            font-family: var(--font-heading);
+            color: var(--accent-gold);
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .form-input {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 1rem 0;
+            color: var(--text-color);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-bottom-color: var(--accent-gold);
+            box-shadow: 0 10px 20px -10px rgba(197, 160, 89, 0.3);
+        }
+
+        textarea.form-input {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* 3D Form Rating Stars */
+        .star-rating {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            gap: 0.5rem;
+        }
+
+        .star-rating input {
+            display: none;
+        }
+
+        .star-rating label {
+            color: rgba(255, 255, 255, 0.2);
+            transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        .star-rating label:hover,
+        .star-rating label:hover~label,
+        .star-rating input:checked~label {
+            color: var(--accent-gold);
+            transform: scale(1.2) translateY(-5px);
+            text-shadow: 0 0 15px var(--accent-gold);
+        }
+
+        .submit-btn {
+            margin-top: 1rem;
+            width: 100%;
+            background: var(--accent-gold) !important;
+            color: #000 !important;
+            font-weight: 700;
+            border: none;
+            box-shadow: 0 10px 20px rgba(197, 160, 89, 0.4);
+        }
+
+        .submit-btn:hover {
+            background: #fff !important;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(197, 160, 89, 0.6);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- SVG Liquid Filter for Extreme Distortions -->
+    <svg style="visibility: hidden; position: absolute; width: 0; height: 0;" xmlns="http://www.w3.org/2000/svg"
+        version="1.1">
+        <defs>
+            <filter id="liquidGoo">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="15" result="blur" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 25 -10"
+                    result="liquidGoo" />
+                <feComposite in="SourceGraphic" in2="liquidGoo" operator="atop" />
+            </filter>
+        </defs>
+    </svg>
+
+    <!-- Extreme Floating Background Blobs -->
+    <div class="blob-container">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <a href="index.html" class="nav-brand">AURELIA<span>.</span></a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="shop.html" class="nav-link">Collections</a></li>
+            <li><a href="heritage.html" class="nav-link">Heritage</a></li>
+            <li><a href="boutiques.html" class="nav-link">Boutiques</a></li>
+            <li><a href="feedback.html" class="nav-link active">Feedback</a></li>
+        </ul>
+        <div class="menu-btn" id="menuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <div class="page-header" style="height: 40vh;">
+        <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=2669&auto=format&fit=crop"
+            alt="Feedback Background">
+        <div class="container hero-content" style="padding-top: 8rem; text-align: center;">
+            <h1 class="display-1 extreme-text-glow">Your Voice.</h1>
+            <p class="hero-description" style="margin: 0 auto;">Help us elevate the Aurelia experience to extraordinary
+                new heights.</p>
+        </div>
+    </div>
+
+    <!-- Feedback Section -->
+    <section class="feedback-section reveal">
+        <div class="container">
+            <div class="feedback-container collection-card">
+                <form class="feedback-form"
+                    onsubmit="event.preventDefault(); this.innerHTML='<div style=\'text-align:center; padding: 2rem;\'><h3 class=\'heading-2 text-gold\'>Thank You!</h3><p style=\'color: #aaa; margin-top: 1rem;\'>Your perspective is invaluable to our artistry.</p></div>';">
+
+                    <div class="form-group">
+                        <label class="form-label">Client Name</label>
+                        <input type="text" class="form-input" required placeholder="Enter your name">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" class="form-input" required placeholder="Enter your email">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Overall Experience</label>
+                        <div class="star-rating">
+                            <input type="radio" name="rating" id="star5" value="5"><label for="star5"><i
+                                    data-lucide="star" fill="currentColor"></i></label>
+                            <input type="radio" name="rating" id="star4" value="4"><label for="star4"><i
+                                    data-lucide="star" fill="currentColor"></i></label>
+                            <input type="radio" name="rating" id="star3" value="3"><label for="star3"><i
+                                    data-lucide="star" fill="currentColor"></i></label>
+                            <input type="radio" name="rating" id="star2" value="2"><label for="star2"><i
+                                    data-lucide="star" fill="currentColor"></i></label>
+                            <input type="radio" name="rating" id="star1" value="1" checked><label for="star1"><i
+                                    data-lucide="star" fill="currentColor"></i></label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Your Perspective</label>
+                        <textarea class="form-input" required
+                            placeholder="Share your experience with Aurelia..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-solid submit-btn">Submit Feedback</button>
+                    <!-- Keep the extreme border glow constraint -->
+                    <div class="glow-wrap" style="position:absolute;inset:0;pointer-events:none;mix-blend-mode:overlay">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer reveal">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h2 class="nav-brand footer-brand">AURELIA<span>.</span></h2>
+                    <p class="footer-desc">Setting the global standard for modern luxury and uncompromising
+                        craftsmanship since 2024.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AURELIA. All Rights Reserved.</p>
+                <div style="display: flex; gap: 1rem;">
+                    <i data-lucide="instagram"></i>
+                    <i data-lucide="twitter"></i>
+                    <i data-lucide="facebook"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutiques | AURELIA Luxury Handbags</title>
+    <meta name="description" content="Find AURELIA luxury boutiques worldwide.">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .store-card {
+            background: var(--card-bg);
+            padding: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            border-radius: 4px;
+            transition: all 0.4s ease;
+        }
+
+        .store-card:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-10px);
+        }
+
+        .store-city {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        .store-details {
+            color: #aaa;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- SVG Liquid Filter for Extreme Distortions -->
+    <svg style="visibility: hidden; position: absolute; width: 0; height: 0;" xmlns="http://www.w3.org/2000/svg"
+        version="1.1">
+        <defs>
+            <filter id="liquidGoo">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="15" result="blur" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 25 -10"
+                    result="liquidGoo" />
+                <feComposite in="SourceGraphic" in2="liquidGoo" operator="atop" />
+            </filter>
+            <filter id="extremeGlitch">
+                <feTurbulence type="fractalNoise" baseFrequency="0.05 0.95" numOctaves="1" result="warp" />
+                <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="30" in="SourceGraphic" in2="warp" />
+            </filter>
+        </defs>
+    </svg>
+
+    <!-- Extreme Floating Background Blobs -->
+    <div class="blob-container">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <a href="index.html" class="nav-brand">AURELIA<span>.</span></a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="shop.html" class="nav-link">Collections</a></li>
+            <li><a href="heritage.html" class="nav-link">Heritage</a></li>
+            <li><a href="boutiques.html" class="nav-link active">Boutiques</a></li>
+            <li><a href="feedback.html" class="nav-link">Feedback</a></li>
+        </ul>
+        <div class="menu-btn" id="menuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header" style="padding-bottom: 0;">
+        <div class="container">
+            <span class="hero-subtitle glitch-text" data-text="Global Presence">Global Presence</span>
+            <h1 class="display-1 extreme-text-glow">Find a <span class="text-italic text-gold">Maison</span></h1>
+            <p style="color: #aaa; max-width: 600px; margin: 2rem auto; font-size: 1.1rem;">Experience the AURELIA
+                collection in person. Book a private viewing at one of our exclusive global boutiques.</p>
+        </div>
+    </header>
+
+    <!-- Boutiques Grid -->
+    <section class="section-padding reveal">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+
+                <div class="store-card tilt-card">
+                    <h2 class="store-city">Paris</h2>
+                    <div class="store-details">
+                        <p>15 Rue cambon</p>
+                        <p>75001 Paris, France</p>
+                        <p>+33 1 42 61 71 83</p>
+                    </div>
+                    <a href="#" class="btn btn-solid">Book Appointment</a>
+                </div>
+
+                <div class="store-card tilt-card">
+                    <h2 class="store-city">Milano</h2>
+                    <div class="store-details">
+                        <p>Via Monte Napoleone 8</p>
+                        <p>20121 Milano, Italy</p>
+                        <p>+39 02 7600 4455</p>
+                    </div>
+                    <a href="#" class="btn btn-solid">Book Appointment</a>
+                </div>
+
+                <div class="store-card tilt-card">
+                    <h2 class="store-city">New York</h2>
+                    <div class="store-details">
+                        <p>725 5th Avenue</p>
+                        <p>New York, NY 10022</p>
+                        <p>+1 212 756 1234</p>
+                    </div>
+                    <a href="#" class="btn btn-solid">Book Appointment</a>
+                </div>
+
+                <div class="store-card tilt-card">
+                    <h2 class="store-city">Tokyo</h2>
+                    <div class="store-details">
+                        <p>Ginza 6-chome</p>
+                        <p>Chuo City, Tokyo 104-0061</p>
+                        <p>+81 3 3562 1212</p>
+                    </div>
+                    <a href="#" class="btn btn-solid">Book Appointment</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h2 class="nav-brand footer-brand">AURELIA<span>.</span></h2>
+                    <p class="footer-desc">Setting the global standard for modern luxury and uncompromising
+                        craftsmanship since 2024.</p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Collections</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">New Arrivals</a></li>
+                        <li><a href="#">Tote Bags</a></li>
+                        <li><a href="#">Crossbody</a></li>
+                        <li><a href="#">Evening Bags</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Client Care</a></li>
+                        <li><a href="#">Book an Appointment</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Repairs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">House</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AURELIA. All Rights Reserved.</p>
+                <div style="display: flex; gap: 1rem;">
+                    <i data-lucide="instagram"></i>
+                    <i data-lucide="twitter"></i>
+                    <i data-lucide="facebook"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
